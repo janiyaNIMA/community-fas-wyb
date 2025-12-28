@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}About - Wayaba University of Sri Lanka{% endblock %}
+
+{% block content %}
+<h1>About Wayaba University of Sri Lanka</h1>
+
+<p>Wayaba University of Sri Lanka is committed to excellence in education, research, and community service. Our goal is to create an inclusive learning environment where students and faculty collaborate to solve real-world problems.</p>
+
+<section class="mission">
+    <h2>Our Mission</h2>
+    <p>To provide high-quality education and research that empowers students to become skilled, ethical, and engaged citizens.</p>
+</section>
+
+<section class="values">
+    <h2>Our Values</h2>
+    <ul>
+        <li>Academic excellence</li>
+        <li>Integrity and respect</li>
+        <li>Innovation and collaboration</li>
+        <li>Community engagement</li>
+    </ul>
+</section>
+
+<section class="contact">
+    <h2>Contact & Visit</h2>
+    <p>For admissions, programs, or partnership inquiries, please contact the university office or visit the main campus.</p>
+</section>
+
+<section class="cta">
+    <p><a href="{{ url_for('index') }}" class="btn">Back to Home</a></p>
+</section>
+{% endblock %}

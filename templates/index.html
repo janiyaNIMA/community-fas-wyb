@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Wayaba University of Sri Lanka{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <h1>Welcome to Wayaba University of Sri Lanka</h1>
+    <p>Wayaba University of Sri Lanka is a vibrant community dedicated to teaching, research, and public service. We offer a range of undergraduate and postgraduate programs designed to prepare students for leadership in their fields.</p>
+</div>
+
+<section class="offerings">
+    <h2>What We Offer</h2>
+    <ul>
+        <li>High-quality academic programs across science, arts, and professional disciplines.</li>
+        <li>Research opportunities and industry partnerships.</li>
+        <li>Student life with clubs, events, and community engagement.</li>
+    </ul>
+</section>
+
+<section class="latest">
+    <h2>Latest</h2>
+    <ul>
+        <li>Admissions open for the upcoming academic year.</li>
+        <li>New research collaborations and community outreach programs.</li>
+    </ul>
+</section>
+
+<section class="cta">
+    <p><a href="{{ url_for('about') }}" class="btn">Learn more about our history, mission, and programs</a></p>
+</section>
+{% endblock %}

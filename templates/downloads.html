@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+
+{% block title %}Downloads - Wayaba University of Sri Lanka{% endblock %}
+
+{% block extra_css %}
+<style>
+/* Centered horizontal tab buttons */
+.tabs { text-align: center; margin-bottom: 20px; }
+.tab-buttons { display: inline-flex; gap: 8px; }
+.tab-button { padding: 8px 14px; background: #faf8f3; border: 1px solid #d4c5b0; cursor: pointer; font-weight: bold; }
+.tab-button.active { background: #2c3e50; color: #fffef0; border-color: #8b7355; }
+.tab-content { border: 1px solid #d4c5b0; padding: 20px; background: #fffef0; max-width: 900px; margin: 0 auto; }
+.hidden { display: none; }
+table { width: 100%; border-collapse: collapse; }
+th, td { border: 1px solid #d4c5b0; padding: 8px; text-align: left; }
+th { background: #e8dcc8; }
+</style>
+{% endblock %}
+
+{% block content %}
+<h1>Course Downloads</h1>
+
+<div class="tabs">
+  <div class="tab-buttons" role="tablist">
+    <button class="tab-button active" data-target="math" role="tab" aria-selected="true">MATH</button>
+    <button class="tab-button" data-target="stat" role="tab">STAT</button>
+    <button class="tab-button" data-target="cmis" role="tab">CMIS</button>
+    <button class="tab-button" data-target="eltn" role="tab">ELTN</button>
+    <button class="tab-button" data-target="imgt" role="tab">IMGT</button>
+  </div>
+</div>
+
+<div id="math" class="tab-content">
+  <h2>MATH</h2>
+  <table>
+    <thead>
+      <tr><th>Course</th><th>Tutorials</th><th>Lecture Slides</th><th>Assignments</th><th>Others</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>MATH (general)</td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div id="stat" class="tab-content hidden">
+  <h2>STAT</h2>
+  <table>
+    <thead>
+      <tr><th>Course</th><th>Tutorials</th><th>Lecture Slides</th><th>Assignments</th><th>Others</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>STAT (general)</td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div id="cmis" class="tab-content hidden">
+  <h2>CMIS</h2>
+  <table>
+    <thead>
+      <tr><th>Course</th><th>Tutorials</th><th>Lecture Slides</th><th>Assignments</th><th>Others</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>CMIS1113</td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td></tr>
+      <tr><td>CMIS1123</td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td></tr>
+      <tr><td>CMIS1131</td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div id="eltn" class="tab-content hidden">
+  <h2>ELTN</h2>
+  <table>
+    <thead>
+      <tr><th>Course</th><th>Tutorials</th><th>Lecture Slides</th><th>Assignments</th><th>Others</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>ELTN1112</td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td></tr>
+      <tr><td>ELTN1122</td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td></tr>
+      <tr><td>ELTN1132</td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div id="imgt" class="tab-content hidden">
+  <h2>IMGT</h2>
+  <table>
+    <thead>
+      <tr><th>Course</th><th>Tutorials</th><th>Lecture Slides</th><th>Assignments</th><th>Others</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>IMGT1112</td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td></tr>
+      <tr><td>IMGT1122</td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td></tr>
+      <tr><td>IMGT1132</td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td></tr>
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  const buttons = document.querySelectorAll('.tab-button');
+  const contents = document.querySelectorAll('.tab-content');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // toggle active button
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const target = btn.getAttribute('data-target');
+      contents.forEach(c => {
+        if (c.id === target) {
+          c.classList.remove('hidden');
+        } else {
+          c.classList.add('hidden');
+        }
+      });
+    });
+  });
+});
+</script>
+{% endblock %}
